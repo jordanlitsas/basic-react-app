@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Counter from './components/Counter';
 import WelcomeText from './components/WelcomeText';
 import Posts from './components/Posts';
+import Calculator from './components/Calculator';
 import { AppBar, Toolbar, Grid, Typography, Button } from '@mui/material';
 
 const App = () => {
@@ -25,8 +26,9 @@ const App = () => {
             <Grid item>
               <Link to='/' style={{ textDecoration: 'none' }}> <Button style={{ color: "white" }}> Home </Button> </Link>
               <Link to='/counter' style={{ textDecoration: 'none' }}> <Button style={{ color: "white" }}> Counter </Button> </Link>
-              <Link to='/login' style={{ textDecoration: 'none' }}> <Button style={{ color: "white" }}> Login </Button> </Link>
               <Link to='/posts' style={{ textDecoration: 'none' }}> <Button style={{ color: "white" }}> Posts </Button> </Link>
+              <Link to='/calc' style={{ textDecoration: 'none' }}> <Button style={{ color: "white" }}> Calculator </Button> </Link>
+              <Link to='/login' style={{ textDecoration: 'none' }}> <Button style={{ color: "white" }}> Login </Button> </Link>
             </Grid>
           </Grid>
         </Toolbar>
@@ -35,6 +37,7 @@ const App = () => {
         <Route path='/login'><Login /></Route>
         <Route path='/counter'> <Counter /> </Route>
         <Route path='/posts'> <Posts /> </Route>
+        <Route path='/calc'> <Calculator /> </Route>
         <Route path='/'><WelcomeText /> </Route>
       </Switch>
     </BrowserRouter>
