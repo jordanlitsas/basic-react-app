@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardContent, Container, Typography } from '@mui/material'
+import { Card, CardContent, Container, Grid, TextField, Typography } from '@mui/material'
 import axios from 'axios';
 
 const Posts = () => {
@@ -26,6 +26,14 @@ const Posts = () => {
 
   let view = (
     <Container>
+      <Grid container spacing={3}>
+        <Grid item xs={8}>
+          <TextField />
+        </Grid>
+        <Grid item xs={8}>
+          <TextField />
+        </Grid>
+      </Grid>
       {posts.map(post => (
         <Card key={post._id} style={{ marginTop: 5 }}>
           <CardContent>

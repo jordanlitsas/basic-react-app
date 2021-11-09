@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
-
-import { Container, Button } from '@mui/material';
-
-import WelcomeText from './WelcomeText';
-import LoginForm from './LoginForm';
+import React, { useContext, useEffect } from 'react';
+import { LoginContext } from '../providers';
+import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import { Typography } from '@mui/material';
 
 const Login = () => {
-  const [loginStatus, setLoginStatus] = useState(false);
-  const [showWelcomeText, setShowWelcomeText] = useState(true);
+  const { setLoginStatus } = useContext(LoginContext);
 
-  const login = () => {
-    setLoginStatus(true);
-  }
 
-  const toggleWelcomeText = () => {
-    setShowWelcomeText(!showWelcomeText);
-  }
+  useEffect(() => {
+    return onAuthUIStateChange((nextAuthState, authData) => {
+      console.log(authData);
+      if (nextAuthState === AuthState.SignedIn) {
+        setLoginStatus(true);
+      } else {
+        setLoginStatus(false);
+      }
+    });
+  }, [setLoginStatus]);
 
   return (
-    <Container>
-      {showWelcomeText ? <WelcomeText /> : null}
-      <LoginForm loginStatus={loginStatus} login={login} />
-      <Button onClick={toggleWelcomeText}> Toggle Welcome Text </Button>
-    </Container>
-  )
+    <AmplifyAuthenticator />
+  );
 }
 
 export default Login;
