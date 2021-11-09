@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { LoginContext } from '../providers';
 import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import { Typography } from '@mui/material';
 
 const Login = () => {
   const { setLoginStatus, setAccessToken } = useContext(LoginContext);
@@ -21,7 +22,8 @@ const Login = () => {
   }, [setLoginStatus, setAccessToken]);
 
   return (
-    <AmplifyAuthenticator />
+    // use the AmplifyAuthenticator component to render the login form
+    <Typography> Use the AmplifyAuthenticator component to render the login form </Typography>
   );
 }
 

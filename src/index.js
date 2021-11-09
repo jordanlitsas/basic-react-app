@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 
 // configure amplify to use awsconfig here
-Amplify.configure(awsconfig);
 
 ReactDOM.render(
   <React.StrictMode>
