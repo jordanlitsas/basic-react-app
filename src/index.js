@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Amplify from 'aws-amplify';
-import awsconfig from 'aws-exports';
+// import awsconfig from './
 import {
   BrowserRouter
 } from "react-router-dom";
 
 // configure amplify to use awsconfig here
 
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
 ReactDOM.render(
   <React.StrictMode>
