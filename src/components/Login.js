@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     // use the AmplifyAuthenticator component to render the login form
-    <Typography> Use the AmplifyAuthenticator component to render the login form </Typography>
+    <AmplifyAuthenticator></AmplifyAuthenticator>
   );
 }
 

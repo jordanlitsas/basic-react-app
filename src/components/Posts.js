@@ -3,7 +3,7 @@ import { Card, CardContent, Container, Grid, TextField, Typography, Button } fro
 import { LoginContext } from '../providers';
 import axios from 'axios';
 
-const MIDDLEWARE_URL = "http://192.168.150.130:8000/posts";
+const MIDDLEWARE_URL = "http://localhost:8000/posts";
 
 const Posts = () => {
   const { accessToken } = useContext(LoginContext);
